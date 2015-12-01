@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="js/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="js/codemirror/addon/hint/show-hint.css">
+    <style type="text/css">
+        .CodeMirror {
+            border-width:1px;
+            border-style: solid;
+            border-color:#DBDFE6;
+        }
+        .CodeMirror-foldmarker {
+            color: blue;
+            text-shadow: #b9f 1px 1px 2px, #b9f -1px -1px 2px, #b9f 1px -1px 2px, #b9f -1px 1px 2px;
+            line-height: .3;
+            cursor: pointer;
+        }
+        .tabs input[type=radio] {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        .tabs {
+            float: none;
+            list-style: none;
+            position: relative;
+            padding: 0;
+        }
+        .tabs li {
+            float: left;
+        }
+        .tabs label {
+            display: block;
+            padding: 10px 20px;
+            border-radius: 2px 2px 0 0;
+            color: #EEE8D5;
+            font-size: 24px;
+            font-weight: normal;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            position: relative;
+            top: 3px;
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+        }
+        .tabs label:hover {
+            background: rgba(255, 255, 255, 0.5);
+            top: 0;
+        }
+        [id^=tab]:checked + label {
+            background: #1B6CA5;
+            color: #EEE8D5;
+            top: 0;
+        }
+        [id^=tab]:checked ~[id^=tab-content] {
+            display: block;
+        }
+        .tab-content {
+            z-index: 2;
+            display: none;
+            text-align: left;
+            width: 100%;
+            font-size: 20px;
+            line-height: 140%;
+            padding-top: 10px;
+            background: #1B6CA5;
+            padding: 15px;
+            color: white;
+            position: absolute;
+            top: 47px;
+            left: 0;
+            box-sizing: border-box;
+            -webkit-animation-duration: 0.5s;
+            -o-animation-duration: 0.5s;
+            -moz-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+        }
+        .tab-content .button {
+            position: absolute;
+            top: 20px;
+            z-index: 10;
+            right: 20px;
+            background-color:#44c767;
+            -moz-border-radius:28px;
+            -webkit-border-radius:28px;
+            border-radius:28px;
+            border:1px solid #18ab29;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:17px;
+            padding:6px 31px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #2f6627;
+        }
+        .tab-content .button:hover {
+            background-color:#5cbf2a;
+        }
+        .tab-content .button:active {
+            top:21px;
+        }
+        #tab-content1 .CodeMirror {
+            float: left;
+            width: 50%;
+            border: 1px solid black;
+        }
+        #tab-content1 iframe {
+            width: 49%;
+            float: left;
+            height: 300px;
+            border: 1px solid black;
+            border-left: 0px;
+            background: white;
+        }
+        .fixed-top #tab-content1 iframe {
+            height: 500px;
+        }
+        .fixed-top .CodeMirror {
+            height: 500px;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<ul class="tabs">
+    <li>
+        <input checked type="radio" name="tabs" id="tab1">
+        <label for="tab1">CSS / Outoput</label>
+        <div id="tab-content1" class="tab-content animated fadeIn">
+            <textarea id="css"></textarea>
+            <iframe id="preview"></iframe>
+        </div>
+    </li>
+    <li>
+        <input type="radio" name="tabs" id="tab2">
+        <label for="tab2">Html</label>
+        <div id="tab-content2" class="tab-content animated fadeIn">
+
+            <textarea id="html"></textarea>
+        </div>
+    </li>
+</ul>
+<script src="js/codemirror/lib/codemirror.js"></script>
+<script src="js/codemirror/addon/hint/show-hint.js"></script>
+<script src="js/codemirror/addon/hint/css-hint.js"></script>
+<script src="js/codemirror/mode/css/css.js"></script>
+<script src="js/codemirror/mode/javascript/javascript.js"></script>
+<script src="js/codemirror/mode/xml/xml.js"></script>
+<script src="js/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+<script>
+
+    (function(){
+        'use strict';
+        var editor = CodeMirror.fromTextArea(document.getElementById("css"), {
+            lineNumbers: true,
+            matchBrackets: true,
+            continueComments: "Enter",
+            mode: {
+                name: "css",
+                globalVars: true
+            },
+            gutters: ["CodeMirror-lint-markers"],
+            lint: true,
+            extraKeys: {
+                "Ctrl-Q": "toggleComment",
+                "Ctrl-Space": "autocomplete"
+            }
+        });
+        var html = CodeMirror.fromTextArea(document.getElementById("html"), {
+            mode: {
+                name: "htmlmixed",
+            },
+            selectionPointer: true
+        });
+        editor.on("change", function() {
+            clearTimeout(delay);
+            delay = setTimeout(updatePreview, 300);
+        });
+
+        html.on("change", function() {
+            clearTimeout(delay);
+            delay = setTimeout(updatePreview, 300);
+        });
+
+        function updatePreview() {
+            var previewFrame = document.getElementById('preview');
+
+            var preview =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
+            preview.open();
+            preview.write('<style>' + editor.getValue() + '</style>' + '<div style=\"text-align: center;font-family: sans-serif;font-weight: 600;color: #6C6C6F;\">Preview</div>' + html.getValue());
+            preview.close();
+        }
+        var delay = setTimeout(updatePreview, 300);
+
+        var htmlmedia = window.frameElement? window.frameElement.getAttribute("html-media"): null;
+        var cssmedia = window.frameElement? window.frameElement.getAttribute("css-media"): null;
+        if(cssmedia !== null) {
+            loadCSSFile("code/" + htmlmedia + ".text");
+        }
+        function loadCSSFile(filename) {
+            $.ajax({
+                url: filename,
+                dataType: "text",
+                success: function (data) {
+                    editor.setValue(data)
+                }
+            });
+        }
+        function loadHTMLFile(filename) {
+            $.ajax({
+                url: filename,
+                dataType: "text",
+                success: function (data) {
+                    html.setValue(data)
+                }
+            });
+        }
+        if(htmlmedia !== null) {
+            loadHTMLFile("code/" + cssmedia + ".text");
+        }
+        var classList = window.frameElement? window.frameElement.classList: null;
+        if(classList !== null && classList.length !== 0){
+            document.body.classList.add(classList[0]);
+        }
+    })( );
+</script>
+</body>
+</html>

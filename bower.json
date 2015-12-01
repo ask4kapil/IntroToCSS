@@ -1,0 +1,19 @@
+{
+  "name": "IntroToCSS",
+  "version": "0.0.0",
+  "homepage": "https://github.com/kapilkumawatca/IntroToCSS",
+  "authors": [
+    "Kapil Kumawat <erkapil2006@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reveal.js": "~3.2.0"
+  }
+}
