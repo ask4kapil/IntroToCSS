@@ -121,6 +121,15 @@
         .fixed-top .CodeMirror {
             height: 500px;
         }
+        .select {
+            float: right !important;
+        }
+        .select select {
+            width: 200px;
+            height: 30px;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
     </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -139,9 +148,18 @@
         <input type="radio" name="tabs" id="tab2">
         <label for="tab2">Html</label>
         <div id="tab-content2" class="tab-content animated fadeIn">
-
             <textarea id="html"></textarea>
         </div>
+    </li>
+    <li class="select">
+        <select id="select-box-html">
+            <option vlaue="">Select Html</option>
+        </select>
+    </li>
+    <li class="select">
+        <select id="select-box-css">
+            <option vlaue="">Select CSS</option>
+        </select>
     </li>
 </ul>
 <script src="js/codemirror/lib/codemirror.js"></script>
@@ -156,6 +174,32 @@
 
     (function(){
         'use strict';
+        var selecthtml = $('#select-box-html'),
+            selectcss = $('#select-box-css');
+        selecthtml.toggle();
+        selectcss.toggle();
+        function enableSelectBox(){
+            $.get('htmllist.json',function(data){
+                for(var i=0; i < data.length; i++) {
+                    selecthtml[0].add(new Option(data[i], data[i]));
+                }
+            });
+            $.get('csslist.json',function(data){
+                for(var i=0; i < data.length; i++) {
+                    selectcss[0].add(new Option(data[i], data[i]));
+                }
+            });
+            selecthtml.toggle();
+            selecthtml.on('change', function() {
+                loadHTMLFile(this.value);
+            });
+            selectcss.toggle();
+            selectcss.on('change', function() {
+                loadCSSFile(this.value);
+            });
+        }
+        enableSelectBox();
+
         var editor = CodeMirror.fromTextArea(document.getElementById("css"), {
             lineNumbers: true,
             matchBrackets: true,
@@ -200,7 +244,7 @@
         var htmlmedia = window.frameElement? window.frameElement.getAttribute("html-media"): null;
         var cssmedia = window.frameElement? window.frameElement.getAttribute("css-media"): null;
         if(cssmedia !== null) {
-            loadCSSFile("code/" + htmlmedia + ".text");
+            loadCSSFile("css/" + cssmedia + ".css");
         }
         function loadCSSFile(filename) {
             $.ajax({
@@ -221,7 +265,7 @@
             });
         }
         if(htmlmedia !== null) {
-            loadHTMLFile("code/" + cssmedia + ".text");
+            loadHTMLFile("html/" + htmlmedia + ".html");
         }
         var classList = window.frameElement? window.frameElement.classList: null;
         if(classList !== null && classList.length !== 0){

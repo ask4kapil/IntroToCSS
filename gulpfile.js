@@ -17,7 +17,7 @@ var paths = {
         'js/codemirror/addon/hint/show-hint.css',
         'js/codemirror/lib/codemirror.css',
         'js/reveal.js/**/*',
-        'js/**/*.css',
+        '*.json',
         '*.html'
     ]
 };
@@ -31,10 +31,16 @@ var argv = require('yargs').argv;
 
 gulp.task('default', ['build']);
 
-gulp.task('list', function() {
+gulp.task('listcss', function() {
     gulp
-        .src('code/**/*')
-        .pipe(require('gulp-filelist')('codelist.json'))
+        .src('css/**/*')
+        .pipe(require('gulp-filelist')('csslist.json'))
+        .pipe(gulp.dest('.'));
+});
+gulp.task('listhtml', function() {
+    gulp
+        .src('html/**/*')
+        .pipe(require('gulp-filelist')('htmllist.json'))
         .pipe(gulp.dest('.'));
 });
 
@@ -52,7 +58,7 @@ gulp.task('build', function(done) {
     if (!fs.existsSync(paths.dist)) {
         fs.mkdirSync(paths.dist);
     }
-    runSequence('pack','compress', 'minify-css', 'minify-html', 'deploy', 'clean');
+    runSequence('pack','compress', 'minify-css', 'minify-html', 'listhtml', 'listcss', 'deploy', 'clean');
 });
 var uglify = require('gulp-uglify');
 
@@ -127,7 +133,7 @@ gulp.task( 'deploy', function () {
     // turn off buffering in gulp.src for best performance
 
     return gulp.src( globs, { base: 'dist', buffer: false } )
-        .pipe( conn.newer( '/public_html/introtojs' ) ) // only upload newer files
-        .pipe( conn.dest( '/public_html/introtojs' ) );
+        .pipe( conn.newer( '/public_html/cssintroduction' ) ) // only upload newer files
+        .pipe( conn.dest( '/public_html/cssintroduction' ) );
 
 } );
