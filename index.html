@@ -33,9 +33,31 @@
     <link rel="stylesheet" href="js/reveal.js/css/theme/moon.css" id="theme">
     <!-- For syntax highlighting -->
     <link rel="stylesheet" href="js/reveal.js/lib/css/zenburn.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <style >
+        .past iframe, .future iframe {
+            display: none;;
+        }
+        .columns {
+            -webkit-column-count: 4;
+            -moz-column-count: 4;
+            -ms-column-count: 4;
+            -o-column-count: 4;
+            column-count: 4;
+            font-size: 80% !important;
+            list-style: none !important;
+        }
+        .columns2 {
+            -webkit-column-count: 2;
+            -moz-column-count: 2;
+            -ms-column-count: 2;
+            -o-column-count: 2;
+            column-count: 2;
+            display: block !important;
+            font-size: 80% !important;
+            list-style: none !important;
+        }
         iframe {
             width: 100% !important;
             height: 400px !important;
@@ -131,6 +153,15 @@
                 </pre>
                 <p><small>CSS Properties <a href="http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html" target="_blank">Link</a></small></p>
             </section>
+            <section>
+                <h2>CSS Rest</h2>
+                <p><small>Resets the styling of all HTML elements wrt to All Browsers</small></p>
+                <ul>
+                    <li>YUI CSS Reset</li>
+                    <li>Normalise </li>
+                </ul>
+                <rframe html-media="cssreset" src="codemirror.html"></rframe>
+            </section>
         </section>
         <section>
             <section>
@@ -148,16 +179,214 @@ selectorB {
             </code></pre>
             </section>
             <section>
+                <h2>Selectors</h2>
+                <ul class="columns">
+                    <li>*</li>
+                    <li>E</li>
+                    <li>.class</li>
+                    <li>#id</li>
+                    <li>E F</li>
+                    <li>E &gt; F</li>
+                    <li>E + F</li>
+                    <li>E[attribute]</li>
+                    <li>E[attribute=value]</li>
+                    <li>E[attribute~=value]</li>
+                    <li>E[attribute|=value]</li>
+                    <li>:first-child</li>
+                    <li>:lang()</li>
+                    <li>:before</li>
+                    <li>::before</li>
+                    <li>::selection</li>
+                    <li>:after</li>
+                    <li>::after</li>
+                    <li>:first-letter</li>
+                    <li>::first-letter</li>
+                    <li>:first-line</li>
+                    <li>::first-line</li>
+                    <li>E[attribute^=value]</li>
+                    <li>E[attribute$=value]</li>
+                    <li>E[attribute*=value]</li>
+                    <li>E ~ F</li>
+                    <li>:root</li>
+                    <li>:last-child</li>
+                    <li>:only-child</li>
+                    <li>:nth-child()</li>
+                    <li>:nth-last-child()</li>
+                    <li>:first-of-type</li>
+                    <li>:last-of-type</li>
+                    <li>:only-of-type</li>
+                    <li>:nth-of-type()</li>
+                    <li>:nth-last-of-type()</li>
+                    <li>:empty</li>
+                    <li>:not()</li>
+                    <li>:target</li>
+                    <li>:enabled</li>
+                    <li>:disabled</li>
+                    <li>:checked</li>
+                    <li>:default</li>
+                    <li>:valid</li>
+                    <li>:invalid</li>
+                    <li>:in-range</li>
+                    <li>:out-of-range</li>
+                    <li>:required</li>
+                    <li>:optional</li>
+                    <li>:read-only</li>
+                    <li>:read-write</li>
+                </ul>
+            </section>
+            <section>
+                <h2>More Selectors</h2>
+                <ul class="columns">
+                    <li>:indeterminate</li>
+                    <li>E:not(s1, s2)</li>
+                    <li>E:matches(s1, s2)</li>
+                    <li>E:has(rs1, rs2)</li>
+                    <li>E[foo="bar" i]</li>
+                    <li>E:dir(ltr)</li>
+                    <li>E:lang(zh, *-hant)</li>
+                    <li>:any-link</li>
+                    <li>:scope</li>
+                    <li>:current</li>
+                    <li>:current(s)</li>
+                    <li>:past</li>
+                    <li>:future</li>
+                    <li>:active-drop</li>
+                    <li>:valid-drop</li>
+                    <li>:invalid-drop</li>
+                    <li>:placeholder-shown</li>
+                    <li>:blank</li>
+                    <li>F || E</li>
+                    <li>:nth-column(n)</li>
+                    <li>:nth-last-column(n)</li>
+                    <li>:scope</li>
+                    <li>:scope-context()</li>
+                    <li>:host</li>
+                    <li>:host()</li>
+                    <li>:host-context()</li>
+                    <li>::shadow</li>
+                    <li>::content</li>
+                    <li>E /deep/ F</li>
+                    <li>::region</li>
+                </ul>
+            </section>
+            <section>
                 <h2>Basic Selectors</h2>
                 <ul>
                     <li>id</li>
                     <li>class</li>
                     <li>tabname</li>
                 </ul>
-                <iframe html-media="basicselector" css-media="basicselector" src="codemirror.html"></iframe>
+                <rframe html-media="basicselector" css-media="basicselector" src="codemirror.html"></rframe>
+            </section>
+            <section>
+                <h2>Combinator Selector</h2>
+                <ul>
+                    <li>ul ol -> descendant selector</li>
+                    <li>ul > li -> child selector</li>
+                    <li>ul + p, li.hasaclass + li -> adjacent sibling</li>
+                    <li>li.hasaclass ~ li -> adjacent all sibling</li>
+                </ul>
+                <rframe html-media="combinators" css-media="combinators" src="codemirror.html"></rframe>
+            </section>
+            <section>
+                <h2>Attribute Selector</h2>
+                <ul style="font-size: 80%">
+                    <li>a[attr] -> Anchor with attr attribute</li>
+                    <li>a[attr=val] -> Anchor with attr attribute of value "val"</li>
+                    <li>a[attr|=val] -> Anchor with attr attribute of value begin as full word "val"</li>
+                    <li>a[attr~=val] -> Anchor with attr attribute of value in between as full word "val"</li>
+                </ul>
+                <rframe html-media="attributesel" css-media="attributesel" src="codemirror.html"></rframe>
+            </section>
+            <section>
+                <h2>CSS3 Attribute Selector</h2>
+                <ul style="font-size: 80%">
+                    <li>a[attr^=val] -> Anchor with attr attribute of value start with "val"</li>
+                    <li>a[attr$=val] -> Anchor with attr attribute of value ends with "val"</li>
+                    <li>a[attr*=val] -> Anchor with attr attribute of value in between matches "val"</li>
+                </ul>
+                <rframe html-media="attributecss3" css-media="attributecss3" src="codemirror.html"></rframe>
+            </section>
+
+            <section>
+                <h2>Structural Selectors</h2>
+                <ul class="columns2">
+                    <li>:nth-child() <i class="fa fa-external-link"></i></li>
+                    <li>:nth-last-child()</li>
+                    <li>:nth-of-type()</li>
+                    <li>:nth-last-of-type()</li>
+                    <li>:first-child</li>
+                    <li>:last-child</li>
+                    <li>:first-of-type</li>
+                    <li>:last-of-type</li>
+                    <li>:only-child</li>
+                    <li>:only-of-type</li>
+                    <li>:root</li>
+                    <li>:empty</li>
+                    <li>:not(:empty)</li>
+                </ul>
+            </section>
+            <section>
+                <h2>UI psedu-classes</h2>
+                <ul>
+                    <li>:enabled</li>
+                    <li>:disabled</li>
+                    <li>:checked</li>
+                    <li>:indeterminate</li>
+                </ul>
+                <rframe html-media="attributecss3" css-media="attributecss3" src="codemirror.html"></rframe>
+            </section>
+            <section>
+                <h2>UI Form psedu-classes</h2>
+                <ul class="columns2">
+                    <li>:valid</li>
+                    <li>:invalid</li>
+                    <li>:required</li>
+                    <li>:optional</li>
+                    <li>:in-range</li>
+                    <li>:out-of-range</li>
+                    <li>:read-only</li>
+                    <li>:read-write</li>
+                    <li>:default</li>
+                </ul>
+                <rframe html-media="attributecss3" css-media="attributecss3" src="codemirror.html"></rframe>
+            </section>
+
+            <section>
+                <h2>UI psedu-elements</h2>
+                <ul style="font-size: 80%;">
+                    <li>::first-line</li>
+                    <li>::first-letter</li>
+                    <li>::selection</li>
+                    <li>::before & ::after</li>
+                    <li>::backdrop</li>
+                </ul>
+                <rframe html-media="attributecss3" css-media="attributecss3" src="codemirror.html"></rframe>
+            </section>
+            <section>
+                <h2>User Action</h2>
+                <ul>
+                    <li>:hover</li>
+                    <li>:active</li>
+                    <li>:focus</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Other Selectors</h2>
+                <ul>
+                    <li>:link</li>
+                    <li>:visited</li>
+                    <li>:not()</li>
+                </ul>
             </section>
         </section>
         <section>
+            <section>
+                <h2>CSS Box Model</h2>
+            </section>
+            <section>
+                <h2>Flow content Properties</h2>
+            </section>
         </section>
     </div>
 </div>
@@ -189,17 +418,55 @@ selectorB {
         ]
     });
     $(document).ready(function () {
+
+        var curSlide = Reveal.getCurrentSlide();
+        if(curSlide.querySelector("rframe")) {
+            var iframe = document.createElement('iframe'),
+                    rframe = curSlide.querySelector("rframe");
+            iframe.setAttribute('html-media', rframe.getAttribute('html-media'));
+            iframe.setAttribute('css-media', rframe.getAttribute('css-media'));
+            iframe.setAttribute('src', 'codemirror.html');
+            rframe.appendChild(iframe);
+        }
         Reveal.addEventListener("slidechanged",function(event){
+            var curSlide = event.currentSlide,
+                prevSlide = event.previousSlide;
+            if(curSlide.querySelector("rframe")) {
+                var iframe = document.createElement('iframe'),
+                    rframe = curSlide.querySelector("rframe");
+                iframe.setAttribute('html-media', rframe.getAttribute('html-media'));
+                iframe.setAttribute('css-media', rframe.getAttribute('css-media'));
+                iframe.setAttribute('src', 'codemirror.html');
+                rframe.appendChild(iframe);
+                Reveal.layout();
+            }
+            if(prevSlide.querySelector("rframe")) {
+                var rframe = prevSlide.querySelector("rframe");
+                if(rframe.childNodes[0])
+                    rframe.removeChild(rframe.childNodes[0])
+            }
             ga('send', 'pageview', {
                 'page': event.indexh,
                 'title': document.title + ' : Slide ' + event.indexh
             });
         });
+        window.closeIframe = function() {
+            $(Reveal.getCurrentSlide()).find('iframe').remove();
+        };
         document.addEventListener("keypress", function (event) {
             var key = event.which || event.keyCode;
             if (key === 99) { // 13 is enter
                 var currentSlide = $(Reveal.getCurrentSlide());
-                if(currentSlide.find('iframe').length === 0) {
+                if(currentSlide[0].querySelector("rframe") && currentSlide.find('iframe').length === 0) {
+                    var iframe = document.createElement('iframe'),
+                            rframe = currentSlide[0].querySelector("rframe");
+                    iframe.setAttribute('html-media', rframe.getAttribute('html-media'));
+                    iframe.setAttribute('css-media', rframe.getAttribute('css-media'));
+                    iframe.setAttribute('src', 'codemirror.html');
+                    rframe.appendChild(iframe);
+                    Reveal.layout();
+                }
+                else if(currentSlide.find('iframe').length === 0) {
                     var iframe = document.createElement('iframe');
                     iframe.setAttribute('src', 'codemirror.html');
                     iframe.classList.add('fixed-top');

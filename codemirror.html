@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="js/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="js/codemirror/addon/hint/show-hint.css">
     <style type="text/css">
         .CodeMirror {
@@ -121,7 +122,7 @@
         .fixed-top .CodeMirror {
             height: 500px;
         }
-        .select {
+        .select, .fa {
             float: right !important;
         }
         .select select {
@@ -129,6 +130,14 @@
             height: 30px;
             margin-top: 10px;
             margin-left: 10px;
+        }
+        .close-frame {
+            width: 25px;
+            padding-left: 10px;
+            padding-top: 10px;
+            font-size: 30px;
+            color: #808080;
+            cursor: pointer;
         }
     </style>
 
@@ -138,7 +147,7 @@
 <ul class="tabs">
     <li>
         <input checked type="radio" name="tabs" id="tab1">
-        <label for="tab1">CSS / Outoput</label>
+        <label for="tab1">CSS / Output</label>
         <div id="tab-content1" class="tab-content animated fadeIn">
             <textarea id="css"></textarea>
             <iframe id="preview"></iframe>
@@ -151,6 +160,7 @@
             <textarea id="html"></textarea>
         </div>
     </li>
+    <i class="fa fa-times close-frame" onclick="parent.closeIframe()"></i>
     <li class="select">
         <select id="select-box-html">
             <option vlaue="">Select Html</option>
@@ -176,17 +186,29 @@
         'use strict';
         var selecthtml = $('#select-box-html'),
             selectcss = $('#select-box-css');
+        var htmlmedia = window.frameElement? window.frameElement.getAttribute("html-media"): null;
+        var cssmedia = window.frameElement? window.frameElement.getAttribute("css-media"): null;
+
         selecthtml.toggle();
         selectcss.toggle();
+
         function enableSelectBox(){
             $.get('htmllist.json',function(data){
                 for(var i=0; i < data.length; i++) {
                     selecthtml[0].add(new Option(data[i], data[i]));
                 }
+                if(htmlmedia !== null) {
+                    selecthtml.val("html/" + htmlmedia + ".html");
+                    loadHTMLFile("html/" + htmlmedia + ".html");
+                }
             });
             $.get('csslist.json',function(data){
                 for(var i=0; i < data.length; i++) {
                     selectcss[0].add(new Option(data[i], data[i]));
+                }
+                if(cssmedia !== null) {
+                    selectcss.val("css/" + cssmedia + ".css");
+                    loadCSSFile("css/" + cssmedia + ".css");
                 }
             });
             selecthtml.toggle();
@@ -217,7 +239,7 @@
         });
         var html = CodeMirror.fromTextArea(document.getElementById("html"), {
             mode: {
-                name: "htmlmixed",
+                name: "htmlmixed"
             },
             selectionPointer: true
         });
@@ -241,11 +263,7 @@
         }
         var delay = setTimeout(updatePreview, 300);
 
-        var htmlmedia = window.frameElement? window.frameElement.getAttribute("html-media"): null;
-        var cssmedia = window.frameElement? window.frameElement.getAttribute("css-media"): null;
-        if(cssmedia !== null) {
-            loadCSSFile("css/" + cssmedia + ".css");
-        }
+
         function loadCSSFile(filename) {
             $.ajax({
                 url: filename,
@@ -264,9 +282,7 @@
                 }
             });
         }
-        if(htmlmedia !== null) {
-            loadHTMLFile("html/" + htmlmedia + ".html");
-        }
+
         var classList = window.frameElement? window.frameElement.classList: null;
         if(classList !== null && classList.length !== 0){
             document.body.classList.add(classList[0]);

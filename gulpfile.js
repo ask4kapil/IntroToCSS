@@ -71,7 +71,7 @@ gulp.task('compress', function() {
 var minifyCss = require('gulp-minify-css');
 
 gulp.task('minify-css', function() {
-    return gulp.src('dist/**/*.css')
+    return gulp.src('dist/js/**/*.css')
         .pipe(minifyCss({compatibility: 'ie8'}))
         .pipe(gulp.dest('dist'));
 });

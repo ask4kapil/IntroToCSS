@@ -1,0 +1,12 @@
+p[class^="top"] {
+    background-color: yellow;
+}
+input[type$="xt"] {
+    width: 150px;
+    display: block;
+    margin-bottom: 10px;
+    background-color: yellow;
+}
+[href*="button"] {
+    font-size: 24px;
+}

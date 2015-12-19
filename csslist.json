@@ -1,3 +1,8 @@
 [
-  "css/basicselector.css"
+  "css/attributecss3.css",
+  "css/attributesel.css",
+  "css/basicselector.css",
+  "css/combinators.css",
+  "css/normalize.css",
+  "css/yuireset.css"
 ]

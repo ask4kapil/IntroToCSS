@@ -1,3 +1,7 @@
 [
-  "html/basicselector.html"
+  "html/attributecss3.html",
+  "html/attributesel.html",
+  "html/basicselector.html",
+  "html/combinators.html",
+  "html/cssreset.html"
 ]
