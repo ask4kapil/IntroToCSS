@@ -1,0 +1,18 @@
+p:nth-last-of-type(2) {
+    background: #ff0000;
+}
+p:nth-last-child(1) {
+    background: grey;
+}
+p:nth-last-of-type(3n+0) {
+    font-style: italic;
+}
+p:nth-last-of-type(2) {
+    font-size: 24px;
+}
+p:nth-last-of-type(odd) {
+    color: green;
+}
+p:nth-last-of-type(even) {
+    color: blue;
+}

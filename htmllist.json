@@ -3,5 +3,12 @@
   "html/attributesel.html",
   "html/basicselector.html",
   "html/combinators.html",
-  "html/cssreset.html"
+  "html/cssreset.html",
+  "html/emptynot.html",
+  "html/nthchild.html",
+  "html/nthlastchild.html",
+  "html/nthoflasttype.html",
+  "html/nthoftype.html",
+  "html/psedu-classes.html",
+  "html/structural.html"
 ]

@@ -3,6 +3,13 @@
   "css/attributesel.css",
   "css/basicselector.css",
   "css/combinators.css",
+  "css/emptynot.css",
   "css/normalize.css",
+  "css/nthchild.css",
+  "css/nthlastchild.css",
+  "css/nthoflasttype.css",
+  "css/nthoftype.css",
+  "css/psedu-classes.css",
+  "css/structural.css",
   "css/yuireset.css"
 ]

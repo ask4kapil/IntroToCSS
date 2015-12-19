@@ -1,0 +1,28 @@
+p::first-letter, p:first-letter {
+    color: red;
+    font-size: 130%;
+}
+p::first-line, p:first-line {
+    background-color: palegreen;
+}
+::-moz-selection {
+    color: gold; background: red;
+}
+
+::selection {
+    color: gold; background: red;
+}
+.exciting-text::before, .exciting-text:before {
+    content: "Start exciting ->";
+}
+
+.boring-text::before, .boring-text:before {
+    content: "Before ->!";
+}
+.exciting-text::after, .exciting-text:after {
+    content: "<- now this *is* exciting!";
+}
+
+.boring-text::after, .boring-text:after {
+    content: "<- BORING!";
+}

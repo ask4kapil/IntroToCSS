@@ -1,0 +1,11 @@
+input:valid { border: 1px solid green;}
+input:invalid { border: 1px solid red;}
+input:required {border-width: 5px;}
+input:optional {border-width: 10px;}
+input:out-of-range { background-color: pink;}
+input:in-range { background-color:lightgreen;}
+input:read-only {background-color: papayawhip;}
+:default
+{
+    background-color: lime;
+}

@@ -1,0 +1,12 @@
+p:nth-child(3n+0) {
+    background: #ff0000;
+}
+p:nth-child(2) {
+    font-size: 24px;
+}
+p:nth-child(odd) {
+    color: green;
+}
+p:nth-child(even) {
+    color: blue;
+}

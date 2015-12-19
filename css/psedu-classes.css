@@ -1,0 +1,30 @@
+a:link {
+    color: red;
+}
+a:visited {
+    color: grey;
+}
+a:hover, p:hover {
+    color: hotpink;
+}
+a:focus, p:focus {
+    color: #00FF00;
+}
+a:active, p:active {
+    color: blue;
+}
+input:checked {
+    width: 50px;
+    height: 50px;
+}
+input:enabled {
+    background: #ffff00;
+}
+:indeterminate, :indeterminate + span {
+    background: limegreen;
+}
+input:disabled {
+    background: #dddddd;
+}
+p:not(.classy) { color: red; }
+div :not(p) { color: green; }

@@ -1,0 +1,12 @@
+p:nth-last-child(3n+0) {
+    background: #ff0000;
+}
+p:nth-last-child(2) {
+    font-size: 24px;
+}
+p:nth-last-child(odd) {
+    color: green;
+}
+p:nth-last-child(even) {
+    color: blue;
+}

@@ -1,0 +1,21 @@
+div *:first-child {
+    background-color: #00a8c6;
+}
+p:first-of-type {
+    color: #0000C0;
+}
+p:last-child {
+    background-color: #00FF00;
+}
+p:last-of-type {
+    color: #6a1520;
+}
+p:only-child {
+    font-size: 40px;
+}
+p:only-of-type {
+    font-style: italic;
+}
+:root {
+    background: lightcyan;
+}

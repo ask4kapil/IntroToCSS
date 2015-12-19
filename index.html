@@ -72,6 +72,13 @@
             max-width: 100% !important;
             max-height: 800px !important;
         }
+        .open-frame {
+            cursor: pointer;
+            color: #D8971B;
+        }
+        .reveal .slide-background.present {
+            background-size: contain;
+        }
     </style>
     <!-- If the query includes 'print-pdf', include the PDF print sheet -->
     <script>
@@ -311,30 +318,36 @@ selectorB {
             <section>
                 <h2>Structural Selectors</h2>
                 <ul class="columns2">
-                    <li>:nth-child() <i class="fa fa-external-link"></i></li>
-                    <li>:nth-last-child()</li>
-                    <li>:nth-of-type()</li>
-                    <li>:nth-last-of-type()</li>
-                    <li>:first-child</li>
-                    <li>:last-child</li>
-                    <li>:first-of-type</li>
-                    <li>:last-of-type</li>
-                    <li>:only-child</li>
-                    <li>:only-of-type</li>
-                    <li>:root</li>
-                    <li>:empty</li>
-                    <li>:not(:empty)</li>
+                    <li>:nth-child()  <i class="fa fa-external-link open-frame" onclick="openFrame('nthchild')"></i></li>
+                    <li>:nth-last-child()  <i class="fa fa-external-link open-frame" onclick="openFrame('nthlastchild')"></i></li>
+                    <li>:nth-of-type()  <i class="fa fa-external-link open-frame" onclick="openFrame('nthoftype')"></i></li>
+                    <li>:nth-last-of-type()  <i class="fa fa-external-link open-frame" onclick="openFrame('nthoflasttype')"></i></li>
+                    <li>:first-child  <i class="fa fa-external-link open-frame" onclick="openFrame('structural')"></i></li>
+                    <li>:last-child  <i class="fa fa-external-link open-frame" onclick="openFrame('structural')"></i></li>
+                    <li>:first-of-type  <i class="fa fa-external-link open-frame" onclick="openFrame('structural')"></i></li>
+                    <li>:last-of-type  <i class="fa fa-external-link open-frame" onclick="openFrame('structural')"></i></li>
+                    <li>:only-child  <i class="fa fa-external-link open-frame" onclick="openFrame('structural')"></i></li>
+                    <li>:only-of-type  <i class="fa fa-external-link open-frame" onclick="openFrame('structural')"></i></li>
+                    <li>:root  <i class="fa fa-external-link open-frame" onclick="openFrame('structural')"></i></li>
+                    <li>:empty  <i class="fa fa-external-link open-frame" onclick="openFrame('emptynot')"></i></li>
+                    <li>:not(selector)  <i class="fa fa-external-link open-frame" onclick="openFrame('emptynot')"></i></li>
                 </ul>
             </section>
             <section>
                 <h2>UI psedu-classes</h2>
-                <ul>
+                <ul class="columns2">
                     <li>:enabled</li>
                     <li>:disabled</li>
                     <li>:checked</li>
                     <li>:indeterminate</li>
+                    <li>:hover</li>
+                    <li>:active</li>
+                    <li>:focus</li>
+                    <li>:link</li>
+                    <li>:visited</li>
+                    <li>:not()</li>
                 </ul>
-                <rframe html-media="attributecss3" css-media="attributecss3" src="codemirror.html"></rframe>
+                <rframe html-media="psedu-classes" css-media="psedu-classes" src="codemirror.html"></rframe>
             </section>
             <section>
                 <h2>UI Form psedu-classes</h2>
@@ -349,7 +362,7 @@ selectorB {
                     <li>:read-write</li>
                     <li>:default</li>
                 </ul>
-                <rframe html-media="attributecss3" css-media="attributecss3" src="codemirror.html"></rframe>
+                <rframe html-media="uiform" css-media="uiform" src="codemirror.html"></rframe>
             </section>
 
             <section>
@@ -359,25 +372,13 @@ selectorB {
                     <li>::first-letter</li>
                     <li>::selection</li>
                     <li>::before & ::after</li>
-                    <li>::backdrop</li>
                 </ul>
-                <rframe html-media="attributecss3" css-media="attributecss3" src="codemirror.html"></rframe>
+                <rframe html-media="psedu-elements" css-media="psedu-elements" src="codemirror.html"></rframe>
             </section>
-            <section>
-                <h2>User Action</h2>
-                <ul>
-                    <li>:hover</li>
-                    <li>:active</li>
-                    <li>:focus</li>
-                </ul>
-            </section>
-            <section>
-                <h2>Other Selectors</h2>
-                <ul>
-                    <li>:link</li>
-                    <li>:visited</li>
-                    <li>:not()</li>
-                </ul>
+        </section>
+        <section>
+            <section data-background="img/specifishity.jpg">
+
             </section>
         </section>
         <section>
@@ -386,6 +387,47 @@ selectorB {
             </section>
             <section>
                 <h2>Flow content Properties</h2>
+                <ul>
+                    <li>box-decoration-break</li>
+                    <li>box-sizing</li>
+                    <li>overflow</li>
+                    <li>overflow-x</li>
+                    <li>overflow-y</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Size Properties</h2>
+                <ul>
+                    <li>height</li>
+                    <li>width</li>
+                    <li>max-height</li>
+                    <li>max-width</li>
+                    <li>min-height</li>
+                    <li>min-width</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Margin/Border/Padding Properties</h2>
+                <ul>
+                    <li>margin</li>
+                    <li>padding</li>
+                    <li>border</li>
+                    <li>border-radius</li>
+                    <li>border-color</li>
+                    <li>border-image</li>
+                    <li>border-spacing</li>
+                    <li>border-style</li>
+                    <li>border-width</li>
+                    <li>border-collapse</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Other Properties</h2>
+                <ul>
+                    <li>box-shadow</li>
+                    <li>visibility</li>
+                </ul>
             </section>
         </section>
     </div>
@@ -440,16 +482,28 @@ selectorB {
                 rframe.appendChild(iframe);
                 Reveal.layout();
             }
-            if(prevSlide.querySelector("rframe")) {
-                var rframe = prevSlide.querySelector("rframe");
-                if(rframe.childNodes[0])
-                    rframe.removeChild(rframe.childNodes[0])
+            if(prevSlide.querySelector("iframe")) {
+                $(prevSlide).find('iframe').remove();
             }
             ga('send', 'pageview', {
                 'page': event.indexh,
                 'title': document.title + ' : Slide ' + event.indexh
             });
         });
+        window.openFrame = function(mode) {
+            var currentSlide = $(Reveal.getCurrentSlide());
+            if(currentSlide.find('iframe').length === 0) {
+                var iframe = document.createElement('iframe');
+                iframe.setAttribute('src', 'codemirror.html');
+                iframe.setAttribute('html-media', mode);
+                iframe.setAttribute('css-media', mode);
+                iframe.classList.add('fixed-top');
+                currentSlide.append(iframe);
+            }
+            else {
+                currentSlide.find('iframe').remove()
+            }
+        };
         window.closeIframe = function() {
             $(Reveal.getCurrentSlide()).find('iframe').remove();
         };

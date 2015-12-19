@@ -1,0 +1,11 @@
+p {
+    color: #000000;
+}
+:not(p) {
+    color: #ff0000;
+}
+p:empty {
+    width: 100px;
+    height: 20px;
+    background: #ff0000;
+}
