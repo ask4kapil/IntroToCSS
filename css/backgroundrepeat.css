@@ -1,0 +1,52 @@
+.background-repeat {
+    /* One-value syntax */
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
+    background-repeat: repeat;
+    background-repeat: space;
+    background-repeat: round;
+    background-repeat: no-repeat;
+
+    /* Two-value syntax: horizontal | vertical */
+    background-repeat: repeat space;
+    background-repeat: repeat repeat;
+    background-repeat: round space;
+    background-repeat: no-repeat round;
+}
+/* Shared for all DIVS in example */
+li {margin-bottom: 12px;}
+.example div {
+    background-image: url(https://mdn.mozillademos.org/files/12005/starsolid.gif);
+    width: 144px;
+    height: 84px;
+}
+
+/* background repeat CSS */
+.one {
+    background-repeat: no-repeat;
+}
+.two {
+    background-repeat: repeat;
+}
+.three {
+    background-repeat: repeat-x;
+}
+.four {
+    background-repeat: repeat-y;
+}
+
+/* Multiple images */
+.five {
+    background-image:  url(https://mdn.mozillademos.org/files/12005/starsolid.gif),
+    url(https://developer.cdn.mozilla.net/media/redesign/img/favicon32.png) !important;
+    background-repeat: repeat-x,
+    repeat-y;
+    height: 144px !important;;
+}
+.six {
+    background-repeat: round;
+}
+
+.seven {
+    background-repeat: space;
+}

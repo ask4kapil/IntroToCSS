@@ -1,0 +1,58 @@
+.background-size {
+    /* Keywords syntax */
+    background-size: cover;
+    background-size: contain;
+
+    /* One-value syntax */
+    /* the width of the image (height set to 'auto') */
+    background-size: 50%;
+    background-size: 3em;
+    background-size: 12px;
+    background-size: auto;
+
+    /* Two-value syntax */
+    /* first value: width of the image, second value: height */
+    background-size: 50% auto;
+    background-size: 3em 25%;
+    background-size: auto 6px;
+    background-size: auto auto;
+
+    /* Multiple backgrounds values by background-image */
+    /* Do not confuse this with background-size: auto auto */
+    background-size: auto, auto;
+    background-size: 50%, 25%, 25%;
+    background-size: 6px, auto, contain;
+
+}
+.ex1 {
+    background-image: url(https://image.freepik.com/free-vector/abstract-flower-background_23-2147511526.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    -moz-background-size: cover;
+}
+.ex2 {
+    background-image: url(https://image.freepik.com/free-vector/abstract-flower-background_23-2147511526.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    -moz-background-size: contain;
+}
+.ex3 {
+    background-image: url(https://image.freepik.com/free-vector/abstract-flower-background_23-2147511526.jpg);
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    -moz-background-size: auto auto;
+}
+
+.ex4 {
+    background-image: url(https://image.freepik.com/free-vector/abstract-flower-background_23-2147511526.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100px;
+    -moz-background-size: 100px;
+}
+.example div{
+    display: block;
+    border: 1px solid grey;
+    height: 100px;
+    margin-top: 20px;
+}

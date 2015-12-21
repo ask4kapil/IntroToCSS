@@ -1,0 +1,9 @@
+.example  {
+    background-image: url("http://www.w3schools.com/cssref/smiley.gif");
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-position: center center;
+    max-height: 300px;
+    overflow: auto;
+    display: block;
+}
