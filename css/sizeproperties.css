@@ -1,0 +1,6 @@
+#parent { width: 300px; }
+
+#child  { background: gold;
+    width: 100%;
+    max-width: 150px;
+}

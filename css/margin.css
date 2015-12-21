@@ -1,0 +1,25 @@
+.ex1 {
+    margin: auto;
+    background: gold;
+    width: 66%;
+}
+.ex2 {
+    margin: 20px 0px 0 -20px;
+    background: gold;
+    width: 66%;
+}
+.margin {
+    margin: 5%;                /* all sides 5% margin */
+
+    margin: 10px;              /* all sides 10px margin */
+
+    margin: 1.6em 20px;        /* top and bottom 1.6em, left and right 20px margin */
+
+    margin: 10px 3% 1em;       /* top 10px, left and right 3%, bottom 1em margin */
+
+    margin: 10px 3px 30px 5px; /* top 10px, right 3px, bottom 30px, left 5px margin */
+
+    margin: 1em auto;          /* 1em margin on top and bottom, box is horizontally centered */
+
+    margin: auto;              /* box is horizontally centered, 0 margin on top and bottom */
+}

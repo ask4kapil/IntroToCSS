@@ -1,0 +1,22 @@
+.padding {
+    padding: 5%;                /* on all sides 5% padding */
+    padding: 10px;              /* on all sides 10px padding */
+    padding: 10px 20px;         /*  top and bottom 10px padding  */
+                                /*  left and right 20px padding  */
+    padding: 10px 3% 20px;      /*  top 10px padding          */
+                                /*  left and right 3% padding */
+                                /*  bottom 20px padding       */
+    padding: 1em 3px 30px 5px;  /*  top    1em  padding  */
+                                /*  right  3px  padding  */
+                                /*  bottom 30px padding  */
+                                /*  left   5px  padding  */
+}
+h4{
+    background-color: green;
+    padding: 50px 20px 20px 50px;
+}
+
+h3{
+    background-color: blue;
+    padding: 40px 50px 50px 40px;
+}

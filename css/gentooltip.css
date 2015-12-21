@@ -1,0 +1,40 @@
+
+/* TOOL TIP */
+p {
+    margin: 1em;
+    font-size: 30px;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+p [data-tooltip="true"] {
+    border-bottom: 1px solid;
+    text-decoration:none;
+    line-height:1;
+    display:inline;
+    z-index: 0;
+}
+p [data-tooltip="true"]:hover {
+    position: relative;
+}
+p [data-tooltip="true"]:hover:before {
+    content: attr(title);
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background-color: #C7573A;
+    color: white;
+    max-width: 10em;
+    min-width: 5em;
+    font-style: normal;
+    padding: 5px;
+    border-radius: 10px;
+    text-align:center;
+    z-index: 100;
+}
+p [data-tooltip="true"]:hover:after {
+    content: "";
+    position:absolute;
+    bottom: -10px;
+    border: 15px solid;
+    position: absolute; left: 20px;
+    border-color:  transparent transparent #C7573A ;
+}

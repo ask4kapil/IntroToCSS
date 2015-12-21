@@ -1,0 +1,35 @@
+.border-image {
+    /* image-source | height | width | repeat */
+    border-image: url("/img/border.png") 30 30 repeat;
+    border-image: url("/img/border.png") 30 30 stretch;
+}
+.ex1 {
+    border: 15px solid transparent;
+    padding: 10px 20px;
+    -moz-border-image:url("/img/border.png") 30 30 repeat; /* Old Firefox */
+    -webkit-border-image:url("/img/border.png") 30 30 repeat; /* Safari */
+    -o-border-image:url("/img/border.png") 30 30 repeat; /* Opera */
+    border-image:url("/img/border.png") 30 30 repeat;
+}
+.ex2 {
+    border: 15px solid transparent;
+    padding: 10px 20px;
+    -moz-border-image:url("/img/border.png") 30 30 round; /* Old Firefox */
+    -webkit-border-image:url("/img/border.png") 30 30 round; /* Safari */
+    -o-border-image:url("/img/border.png") 30 30 round; /* Opera */
+    border-image:url("/img/border.png") 30 30 round;
+}
+.ex3 {
+    border: 15px solid transparent;
+    padding: 10px 20px;
+    -moz-border-image:url("/img/border.png") 30 30 stretch; /* Old Firefox */
+    -webkit-border-image:url("/img/border.png") 30 30 stretch; /* Safari */
+    -o-border-image:url("/img/border.png") 30 30 stretch; /* Opera */
+    border-image:url("/img/border.png") 30 30 stretch;
+}
+
+.example div {
+    width: 200px;
+    height: 40px;
+    margin: 50px;
+}

@@ -1,0 +1,13 @@
+a[href^=http]:hover {
+    position: relative;
+}
+a[href^=http]:hover:after {
+    content: attr(href);
+    position: absolute;
+    top: 1em;
+    left: 0;
+    background-color: black;
+    color: white;
+    padding: 3px 5px;
+    line-height:1;
+}

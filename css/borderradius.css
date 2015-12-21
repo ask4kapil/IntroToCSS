@@ -1,0 +1,58 @@
+.border-radius {
+    /* The syntax of the first radius allows one to four values */
+    /* Radius is set for all 4 sides */
+    border-radius: 10px;
+
+    /* top-left-and-bottom-right | top-right-and-bottom-left */
+    border-radius: 10px 5%;
+
+    /* top-left | top-right-and-bottom-left | bottom-right */
+    border-radius: 2px 4px 2px;
+
+    /* top-left | top-right | bottom-right | bottom-left */
+    border-radius: 1px 0 3px 4px;
+
+    /* The syntax of the second radius allows one to four values */
+    /* (first radius values) / radius */
+    border-radius: 10px 5% / 20px;
+
+    /* (first radius values) / top-left-and-bottom-right | top-right-and-bottom-left */
+    border-radius: 10px 5% / 20px 30px;
+
+    /* (first radius values) / top-left | top-right-and-bottom-left | bottom-right */
+    border-radius: 10px 5px 2em / 20px 25px 30%;
+
+    /* (first radius values) / top-left | top-right | bottom-right | bottom-left */
+    border-radius: 10px 5% / 20px 25em 30px 35em;
+
+    border-radius: inherit;
+}
+.ex1 {
+    border: solid 10px;
+    /* the border will curve into a 'D' */
+    border-radius: 10px 40px 40px 10px;
+}
+.ex2 {
+    border: groove 1em red;
+    border-radius: 2em;
+}
+.ex3 {
+    background: gold;
+    border: ridge gold;
+    border-radius: 13em/3em;
+}
+.ex4 {
+    border: none;
+    background: gold;
+    border-radius: 40px 10px;
+}
+.ex5 {
+    border: none;
+    background: gold;
+    border-radius: 50%
+}
+.example div {
+    width: 200px;
+    height: 40px;
+    margin: 50px;
+}

@@ -58,6 +58,7 @@
             font-size: 80% !important;
             list-style: none !important;
         }
+
         iframe {
             width: 100% !important;
             height: 400px !important;
@@ -389,16 +390,18 @@ selectorB {
             <section>
                 <h2>Flow content Properties</h2>
                 <ul>
-                    <li>box-decoration-break</li>
-                    <li>box-sizing</li>
-                    <li>overflow</li>
+                    <li>box-decoration-break: slice | clone </li>
+                    <li>box-sizing: content-box | border-box</li>
+                    <li>overflow: visible | hidden | scroll | auto</li>
                     <li>overflow-x</li>
                     <li>overflow-y</li>
                 </ul>
+                <rframe html-media="flowcontent" css-media="flowcontent" src="codemirror.html"></rframe>
             </section>
             <section>
                 <h2>Size Properties</h2>
-                <ul>
+                <p><small>auto | &lt;length&gt; value | &lt;percentage&gt; value</small></p>
+                <ul class="columns2">
                     <li>height</li>
                     <li>width</li>
                     <li>max-height</li>
@@ -406,29 +409,62 @@ selectorB {
                     <li>min-height</li>
                     <li>min-width</li>
                 </ul>
+                <rframe html-media="sizeproperties" css-media="sizeproperties" src="codemirror.html"></rframe>
             </section>
 
             <section>
                 <h2>Margin/Border/Padding Properties</h2>
                 <ul>
-                    <li>margin</li>
-                    <li>padding</li>
+                    <li>margin  <i class="fa fa-external-link open-frame" onclick="openFrame('margin')"></i></li>
+                    <li>padding  <i class="fa fa-external-link open-frame" onclick="openFrame('padding')"></i></li>
                     <li>border</li>
-                    <li>border-radius</li>
-                    <li>border-color</li>
-                    <li>border-image</li>
-                    <li>border-spacing</li>
-                    <li>border-style</li>
-                    <li>border-width</li>
-                    <li>border-collapse</li>
+                    <li>border-radius <i class="fa fa-external-link open-frame" onclick="openFrame('borderradius')"></i></li>
+                    <li>border-color <i class="fa fa-external-link open-frame" onclick="openFrame('bordercolor')"></i></li>
+                    <li>border-image <i class="fa fa-external-link open-frame" onclick="openFrame('borderimage')"></i></li>
+                    <li>border-spacing: (length) <i class="fa fa-external-link open-frame" onclick="openFrame('borderspacing')"></i></li>
+                    <li>border-style: none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset <i class="fa fa-external-link open-frame" onclick="openFrame('borderstyle')"></i></li>
+                    <li>border-width: (length) | thin | medium | thick | inherit <i class="fa fa-external-link open-frame" onclick="openFrame('borderwidth')"></i></li>
+                    <li>border-collapse: collapse | separate <i class="fa fa-external-link open-frame" onclick="openFrame('borderspacing')"></i></li>
                 </ul>
             </section>
             <section>
                 <h2>Other Properties</h2>
                 <ul>
                     <li>box-shadow</li>
-                    <li>visibility</li>
+                    <li>visibility: visible | hidden | collapse</li>
                 </ul>
+                <rframe html-media="boxshadow" css-media="boxshadow" src="codemirror.html"></rframe>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Generated Content</h2>
+                <img data-src="/img/multiplecanvases.jpg">
+            </section>
+            <section>
+                <h2>Icons</h2>
+                <rframe html-media="genicons" css-media="genicons" src="codemirror.html"></rframe>
+            </section>
+            <section>
+                <h2>Attributes</h2>
+                <rframe html-media="genattributes" css-media="genattributes" src="codemirror.html"></rframe>
+            </section>
+            <section>
+                <h2>Quotes</h2>
+                <rframe html-media="genquotes" css-media="genquotes" src="codemirror.html"></rframe>
+            </section>
+            <section>
+                <h2>Tool Tip</h2>
+                <rframe html-media="gentooltip" css-media="gentooltip" src="codemirror.html"></rframe>
+            </section>
+            <section>
+                <h2>Shapes</h2>
+                <rframe html-media="genshapes" css-media="genshapes" src="codemirror.html"></rframe>
+                <p><small><a href="https://css-tricks.com/examples/ShapesOfCSS/" target="_blank">Refer more</a></small></p>
+            </section>
+            <section>
+                <h2>More</h2>
+                <p><small><a href="https://css-tricks.com/pseudo-element-roundup/" target="_blank"> Refer More</a></small></p>
             </section>
         </section>
     </div>

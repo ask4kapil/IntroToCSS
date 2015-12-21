@@ -1,0 +1,65 @@
+a:before {
+    color: #ffffff;
+    background: #000000;
+    font-size: 120%;
+    padding: 2px 5px;
+    display: inline-block;
+    width: 1.2em;
+    margin-right: 10px;
+    text-align: center;
+}
+a[href^="mailto:"]:before {
+    content: "\2709 ";
+}
+a[href^="tel:"]:before {
+    content: "\2706";
+}
+a[href$="vcs"]:before {
+    content: "\231A";
+}
+ul {
+    list-style: none;
+}
+li {
+    margin:10px;
+}
+
+blockquote p:before,
+blockquote p:after {
+    font-size: 2em;
+    color: #C7573A;
+    line-height: 0;
+    vertical-align: middle;
+}
+blockquote p:first-child:before {
+    content: "\275D";
+    margin: 0 5px 0 -40px;
+}
+blockquote p:last-child:after {
+    content: "\275E";
+    margin: 0 -40px 0 5px;
+}
+.thought{
+    width: 200px;
+    height: 50px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.thought,.thought:before,
+.thought:after  {
+    border-radius: 50%;
+    border: 5px solid blue;
+    background-color: white;
+    position:relative;
+}
+.thought:before,
+.thought:after {
+    content: '';
+    position:absolute;
+    left: 20%; bottom: -30px;
+    height: 40px; width: 40px;
+}
+.thought:after {
+    left: 12%; bottom: -50px;
+    height: 20px; width: 20px;
+}

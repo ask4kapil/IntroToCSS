@@ -1,0 +1,49 @@
+.border-style {
+    /* Apply to all four sides */
+    border-style: dashed;
+
+    /* horizontal | vertical */
+    border-style: dotted solid;
+
+    /* top | horizontal | bottom */
+    border-style: hidden double dashed;
+
+    /* top | right | bottom | left */
+    border-style: none solid dotted dashed;
+
+    /* Global values */
+    border-style: inherit;
+    border-style: initial;
+    border-style: unset;
+}
+.ex1 {
+    border-style: dotted !important;
+}
+.ex2 {
+    border-style: dashed !important;
+}
+.ex3 {
+    border-style: double !important;
+}
+.ex4 {
+    border-style: groove !important;
+}
+.ex5 {
+    border-style: inset !important;
+}
+.ex6 {
+    border-style: outset !important;
+}
+.ex7 {
+    border-style: ridge !important;
+}
+.ex8 {
+    border-style: solid !important;
+}
+
+.example div {
+    border: 9px solid #C7573A;
+    width: 200px;
+    height: 40px;
+    margin: 50px;
+}
