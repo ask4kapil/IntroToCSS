@@ -1,0 +1,21 @@
+.example div {
+    display: block;
+    border: 1px solid grey;
+    padding-top: 10px;
+}
+.ex1 #myspan{
+    background-color: red;
+    float: none;
+}
+.ex2 #myspan{
+    background-color: red;
+    float: left;
+}
+.ex3 #myspan{
+    background-color: red;
+    float: right;
+}
+.ex4 #myspan{
+    background-color: red;
+    float: initial;
+}

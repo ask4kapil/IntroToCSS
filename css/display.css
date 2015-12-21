@@ -1,0 +1,26 @@
+.example div {
+    display: block;
+    border: 1px solid grey;
+    padding-top: 10px;
+}
+.ex1 #myspan{
+    display: inline;
+}
+.ex2 #myspan{
+    display: block;
+}
+.ex3 #myspan{
+    display: list-item;
+}
+.ex4 #myspan{
+    display: inline-block;
+}
+.ex5 #myspan{
+    display: flex;
+}
+.ex6 #myspan{
+    display: inline-flex;
+}
+.ex7 #myspan{
+    display: none;
+}

@@ -128,7 +128,7 @@
                 <li>Generated Content</li>
                 <li>Backgrounds</li>
                 <li>Display/Float/Position/z-index</li>
-                <li>Font/text-align</li>
+                <li>Font</li>
                 <li>Media Queries</li>
                 <li>Tabs with CSS</li>
                 <li>Debugging</li>
@@ -504,6 +504,7 @@ selectorB {
                     <li>flex</li>
                     <li>inline-flex</li>
                 </ul>
+                <p><small>Example<i class="fa fa-external-link open-frame" onclick="openFrame('display')"></i></small></p>
             </section>
             <section>
                 <h2>Float</h2>
@@ -513,15 +514,18 @@ selectorB {
                     <li>right</li>
                     <li>none</li>
                 </ul>
+                <rframe html-media="float" css-media="float" src="codemirror.html"></rframe>
             </section>
             <section>
                 <h2>Clear</h2>
                 <p><small>The clear CSS property specifies whether an element can be next to floating elements that precede it or must be moved down (cleared) below them.</small></p>
-                <ul>
+                <ul class="columns2">
                     <li>left</li>
                     <li>right</li>
+                    <li>both</li>
                     <li>none</li>
                 </ul>
+                <rframe html-media="clear" css-media="clear" src="codemirror.html"></rframe>
             </section>
             <section>
                 <h2>Position</h2>
@@ -541,6 +545,84 @@ selectorB {
                     <li>auto</li>
                     <li>&lt;integer&gt;</li>
                 </ul>
+                <rframe html-media="zindex" css-media="zindex" src="codemirror.html"></rframe>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Font</h2>
+                <pre><code data-trim>
+@font-face {
+    font-family: 'blah';
+    src: url('blah.eot');
+    src: url('blah.eot?#iefix')
+        format('embedded-opentype'),
+        url('blah.woff') format('woff'),
+        url('blah.ttf') format('truetype'),
+        url('blah.svg#blahRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: 'blah', arial, san-serif;
+}
+                </code></pre>
+            </section>
+            <section>
+                <h2>@font-face</h2>
+                <pre><code data-trim>
+@font-face {
+    font-family: yourFontName;
+    src: url(fontfile) [, url(fontfile)]*;
+    [font-weight: bold|normal];
+    [font-style: italic|normal];
+    [charset: characterSet;]
+}</code> </pre>
+                <table class="reveal">
+                    <thead>
+                        <tr>
+                            <th>File</th>
+                            <th>chrome</th>
+                            <th>firefox</th>
+                            <th>safari</th>
+                            <th>IE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>EOT</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>TTF/OTF</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i>9</td>
+                        </tr>
+                        <tr>
+                            <td>SVG</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>WOFF</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i>5.1</td>
+                            <td><i class="fa fa-check"></i>9</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section>
+                <h2>Google Fonts</h2>
+                <rframe html-media="fontface" css-media="fontface" src="codemirror.html"></rframe>
             </section>
         </section>
     </div>
