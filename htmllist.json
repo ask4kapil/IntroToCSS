@@ -17,11 +17,15 @@
   "html/borderwidth.html",
   "html/boxmodel.html",
   "html/boxshadow.html",
+  "html/clear.html",
   "html/combinators.html",
   "html/cssreset.html",
+  "html/display.html",
   "html/emptynot.html",
   "html/fixedposition.html",
+  "html/float.html",
   "html/flowcontent.html",
+  "html/fontface.html",
   "html/genattributes.html",
   "html/genicons.html",
   "html/genquotes.html",
@@ -38,5 +42,7 @@
   "html/relativeposition.html",
   "html/sizeproperties.html",
   "html/structural.html",
-  "html/uiform.html"
+  "html/tabswithcss.html",
+  "html/uiform.html",
+  "html/zindex.html"
 ]

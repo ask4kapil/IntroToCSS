@@ -17,10 +17,14 @@
   "css/borderwidth.css",
   "css/boxmodel.css",
   "css/boxshadow.css",
+  "css/clear.css",
   "css/combinators.css",
+  "css/display.css",
   "css/emptynot.css",
   "css/fixedposition.css",
+  "css/float.css",
   "css/flowcontent.css",
+  "css/fontface.css",
   "css/genattributes.css",
   "css/genicons.css",
   "css/genquotes.css",
@@ -38,6 +42,8 @@
   "css/relativeposition.css",
   "css/sizeproperties.css",
   "css/structural.css",
+  "css/tabswithcss.css",
   "css/uiform.css",
-  "css/yuireset.css"
+  "css/yuireset.css",
+  "css/zindex.css"
 ]

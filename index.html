@@ -625,6 +625,79 @@ body {
                 <rframe html-media="fontface" css-media="fontface" src="codemirror.html"></rframe>
             </section>
         </section>
+        <section>
+            <section>
+                <h2>Media Queries</h2>
+                <pre><code data-trim>
+&lt;link rel='stylesheet' type='text/css'
+      media='screen' href='css/styles.css' /&gt;
+
+&lt;link rel='stylesheet' type='text/css'
+      media='print' href='css/print.css' /&gt;
+
+@media screen {
+    p {
+        color: blue;
+    }
+}
+
+@media print {
+    p {
+        color: red;
+    }
+}
+                </code> </pre>
+            </section>
+            <section>
+                <h2>Responsive Design</h2>
+                <pre><code data-trim>
+&lt;link rel='stylesheet'
+      media='screen and (min-width: 320px) and (max-width: 480px)'
+      href='css/smartphone.css' /&gt;
+@media screen and (max-width: 480px){
+    a {
+        transition: background-color 200ms linear 50ms;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    a[href^="mailto:]:before {
+        content: url(icons/email.gif);
+    }
+}
+                </code> </pre>
+            </section>
+            <section>
+                <h2>Media Queries Properties</h2>
+                <ul class="columns2">
+                    <li>(min/max)-width: viewport width</li>
+                    <li>(min/max)-height: viewport height</li>
+                    <li>(min/max)-device-width: screen width</li>
+                    <li>(min/max)-device-height: screen height</li>
+                    <li>orientation: portrait(h>w) | landscape(w>h)</li>
+                    <li>(min/max)-aspect-ratio: width/height</li>
+                    <li>(min/max)-device-aspect-ratio: device-width/height</li>
+                    <li>(min/max)-color:</li>
+                    <li>(min/max)-color-index:</li>
+                    <li>(min/max)-monochrome: 0 | 1+</li>
+                    <li>(min/max)-resolution: 72dpi | 100dpcm</li>
+                    <li>scan: progressive | interlace (tv)</li>
+                    <li>grid: 0 | 1 (grids (like tty) or bitmap)</li>
+                </ul>
+                <p><small><a href="http://www.w3.org/TR/css3-mediaqueries/#media1" target="_blank">Spec</a></small></p>
+            </section>
+        </section>
+        <section>
+            <h2>Tab with CSS</h2>
+            <rframe html-media="tabswithcss" css-media="tabswithcss" src="codemirror.html"></rframe>
+        </section>
+        <section>
+            <h2>Debugging</h2>
+            <p>Demo</p>
+        </section>
+        <section>
+            <h2>Thank You</h2>
+        </section>
     </div>
 </div>
 <script src="js/reveal.js/lib/js/head.min.js"></script>
