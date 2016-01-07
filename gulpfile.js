@@ -121,7 +121,7 @@ gulp.task( 'deploy', function () {
         host: 'ftp.ask4kapil.xyz',
         user: argv.username,
         pass: argv.password,
-        parallel: 5,
+        parallel: 3,
         log:      gutil.log
     } );
 
